@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-color: rgb(14, 34, 52);
+}
+p{
+  position: relative;
+    right: 772px;
+    top: 66px;
+    text-align: right;
+}
+.sidenav {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#131a2a;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 20px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #ffffff;
+  background-color: #ed1e38;
+}
+
+h2{
+  background-color:#ed1e38;
+  color: #f1f1f1;
+
+}
+.main {
+  margin-left: 260px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+.inputbox{
+  background-color: #708aa5;
+  height: 100%;
+  width:100%;
+}
+select{
+border-radius:15px;
+  width: 354px;
+  padding: 10px 10px;
+  margin: 1px 0;
+  border:4px solid skyblue;
+  font-size:18px;
+
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+input{
+  border-radius:15px;
+  width: 354px;
+  padding: 10px 10px;
+  margin: 1px 0;
+  border:4px solid skyblue;
+  font-size:18px;
+
+}
+button{
+color:white;
+background-color:rgb(6, 146, 174);
+padding:20px;
+font-weight:bolder;
+border-style: none;
+border-radius: 5px;
+font-size: 18px;
+border-style:groove;
+
+}
+button:hover{
+  background-color: rgb(19, 166, 78);
+}
+button:active{
+  background-color: rgb(9, 107, 48);
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="/">Dashboard</a>
+  <a href="/view">View Student Details</a>
+  <a href="/add">Add Student</a>
+  <a href="/contact">Contact</a>
+</div>
+
+<div class="main">
+  <center>
+      <h2>Student Database</h2>
+      <div class="inputbox">
+        <h3>Update Student Details</h3>
+          <form action="" method="post" enctype="multipart/form-data">
+      <p>Student Name:</p>
+        <input type="text" name="sname" value="{{student[0]}}" placeholder="Student Name" required>
+          <p>Student Class:</p>
+          <select name="stc"  required>
+
+              <option>Select Class</option>
+    <option value="1st" {% if student[1] == '1st' %} selected {% endif %}>1std</option>
+    <option value="2nd" {% if student[1] == '2nd' %} selected {% endif %}>2nd</option>
+    <option value="3rd" {% if student[1] == '3rd' %} selected {% endif %}>3rd</option>
+      <option value="4th" {% if student[1] == '4th' %} selected {% endif %}>4th</option>
+              <option value="5th" {% if student[1] == '5th' %} selected {% endif %}>5th</option>
+    <option value="6th" {% if student[1] == '6th' %} selected {% endif %}>6th</option>
+      <option value="7th" {% if student[1] == '7th' %} selected {% endif %}>7th</option>
+              <option value="8th" {% if student[1] == '8th' %} selected {% endif %}>8th</option>
+    <option value="9th" {% if student[1] == '9th' %} selected {% endif %}>9th</option>
+      <option value="10th" {% if student[1] == '10th' %} selected {% endif %}>10th</option>
+              <option value="11th" {% if student[1] == '11th' %} selected {% endif %}>11th</option>
+    <option value="12th" {% if student[1] == '12th' %} selected {% endif %}>12th</option>
+
+  </select>
+           <p>Section:</p>
+     <select name="section" id="section" required>
+  <option>Select Section</option>
+  <option value="A" {% if student[2] == 'A' %} selected {% endif %}>A</option>
+  <option value="B" {% if student[2] == 'B' %} selected {% endif %}>B</option>
+  <option value="C" {% if student[2] == 'C' %} selected {% endif %}>C</option>
+  <option value="D" {% if student[2] == 'D' %} selected {% endif %}>D</option>
+</select>
+
+
+  </select>
+          <p>Gender:</p>
+<select name="gender" id="gender" required>
+  <option value="male" {% if student[3] == 'male' %} selected {% endif %}>Male</option>
+  <option value="female" {% if student[3] == 'female' %} selected {% endif %}>Female</option>
+</select>
+
+          <p>Date of Birth:</p>
+        <input type="date" name="dob" value="{{student[4]}}" placeholder="Date of birth" required>
+         <p>Academic Year:</p>
+        <input type="text" name="acy" value="{{student[8]}}" placeholder="Academic year" required>
+          <p>Father Name:</p>
+        <input type="text"  name="fan" value="{{student[6]}}" placeholder="Father Name" required>
+        <p>Mother Name:</p>
+        <input type="text" name="mon" value="{{student[5]}}" placeholder="Mother Name" required>
+            <p>Parent Contact Number:</p>
+        <input type="text" name="pcn" value="{{student[7]}}" placeholder="Parent Contact Number" required>
+            <p>Address:</p>
+        <input type="text" id="address" value="{{student[9]}}" name="addr" placeholder="Address" required> <br><br>
+        <button>Update Details</button><br><br>
+          </form>
+      </div>
+
+  </center>
+
+</div>
+
+</body>
+</html>
