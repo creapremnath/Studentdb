@@ -1,17 +1,13 @@
-create database studentdatabase;
-use studentdatabase;
-create table studentinfo(
-id int not null auto_increment,
-primary key(id),
-Student_Name varchar(50) not null,
-Student_Class varchar(4) not null,
-Parent_Name varchar(50) not null, 
-Parent_Contact_Number bigint not null, 
-Address varchar(200) not null, 
-Date_Of_Birth varchar(10) not null, 
-Gender varchar (10) not null, 
-section varchar(1) not null,
-Academic_Year varchar(9) not null
-)
-
-
+CREATE TABLE studentinfo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Student_Name VARCHAR(50),
+    Student_Class VARCHAR(4),
+    father_Name VARCHAR(50),
+    mother_Name VARCHAR(50),
+    Parent_Contact_Number BIGINT,
+    Address VARCHAR(200),
+    Date_Of_Birth VARCHAR(10),
+    Gender VARCHAR(10),
+    section VARCHAR(1),
+    Academic_Year VARCHAR(9)
+);
